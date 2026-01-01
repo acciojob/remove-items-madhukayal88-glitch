@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Remove Color</title>
+    <title>Remove Color from Dropdown</title>
 </head>
 <body>
-    <form>
-        <select id="colorSelect">
-            <option>Red</option>
-            <option>Green</option>
-            <option>White</option>
-            <option>Black</option>
-        </select>
-        <input type="button" value="Select and Remove" onclick="removecolor()">
-    </form>
 
-    <script src="script.js"></script>
+    <select id="colorSelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>White</option>
+        <option>Black</option>
+    </select>
+
+    <input type="button" value="Select and Remove" onclick="removeColor()">
+
+    <script>
+        function removeColor() {
+            const select = document.getElementById("colorSelect");
+            const selectedIndex = select.selectedIndex;
+
+            if (selectedIndex !== -1) {
+                select.remove(selectedIndex);
+            }
+        }
+    </script>
+
 </body>
 </html>
